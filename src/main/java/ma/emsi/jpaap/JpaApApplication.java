@@ -54,11 +54,11 @@ List<Patient> patientList=patientRepository.chercherPatients("%h%",40);
         if(patient!=null){
             System.out.println(patient.getNom());
             System.out.println(patient.isMalade());
-
+            patient.setScore(870);
+            patientRepository.save(patient);
+            patientRepository.deleteById(1L);
         }
-patient.setScore(870);
-        patientRepository.save(patient);
-        patientRepository.deleteById(1L);
+
 
     }
 }
